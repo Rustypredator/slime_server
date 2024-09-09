@@ -38,6 +38,8 @@ async def on_ready():
 @bot.event
 async def on_command(ctx):
     backend.set_discord_channel(ctx)
+    backend.send_msg(f"Command: {ctx.message.content}")
+    return #stop execution of command?
 
 async def setup(bot: commands.Bot) -> None:
     """
